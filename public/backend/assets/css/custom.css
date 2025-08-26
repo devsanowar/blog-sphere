@@ -1,0 +1,13 @@
+.sidebar .menu .list .menu-toggle:after {
+    display: 'none';
+}
+.dropdown-menu ul.menu .menu-info {
+    top: 7px !important;
+}
+
+.slimScrollDiv {
+    height: auto !important;
+}
+ul.menu.list-unstyled.custom-profile-signout {
+    height: auto !important;
+}
