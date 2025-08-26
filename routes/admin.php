@@ -21,6 +21,7 @@ use App\Http\Controllers\Admin\CareerController;
 use App\Http\Controllers\Admin\JobApplyController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\StudentController;
 
 
 Route::prefix('admin')->middleware('auth')->group(function () {
@@ -164,5 +165,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     // Job Apply
     Route::resource('job-apply', JobApplyController::class);
+    Route::resource('career', CareerController::class);
+
+    // Student
+    Route::resource('student', StudentController::class);
 
 });
