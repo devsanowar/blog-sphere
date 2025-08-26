@@ -165,4 +165,15 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     // Job Apply
     Route::resource('job-apply', JobApplyController::class);
 
+
+    // TeacherRoutes
+    Route::prefix('teacher')->group(function () {
+        Route::get('/', [\App\Http\Controllers\Admin\TeacherController::class, 'index'])->name('teacher.index');
+        Route::get('create', [\App\Http\Controllers\Admin\TeacherController::class, 'create'])->name('teacher.create');
+        Route::post('store', [\App\Http\Controllers\Admin\TeacherController::class, 'store'])->name('teacher.store');   
+        Route::get('edit/{id}', [\App\Http\Controllers\Admin\TeacherController::class, 'edit'])->name('teacher.edit');
+        Route::put('update/{id}', [\App\Http\Controllers\Admin\TeacherController::class, 'update'])->name('teacher.update');
+        Route::delete('destroy/{id}', [\App\Http\Controllers\Admin\TeacherController::class, 'destroy'])->name('teacher.destroy');
+    });
+
 });
