@@ -37,23 +37,25 @@ class EmployeController extends Controller
 
     public function edit($id)
     {
-        // $employe = Employe::findOrFail($id);
-        return view('admin.layouts.pages.employe.edit'); //, compact('employe'));
+        $employe = Employe::findOrFail($id);
+        return view('admin.layouts.pages.employe.edit', compact('employe'));
     }
 
     public function update(Request $request, $id)
     {
-        // Validate and update the employe data
-        // $request->validate([
-        //     'name' => 'required|string|max:255',
-        //     'email' => 'required|email|unique:employes,email,' . $id,
-        //     // Add other validation rules as needed
-        // ]);
 
-        // $employe = Employe::findOrFail($id);
-        // $employe->update($request->all());
+        $request->validate([
+            'employe_name' => 'required|string|max:255',
+            'employe_phone' => 'required|numeric',
+            'employe_email' => 'required|email|unique:employes,employe_email,' . $id,
+        ]);
 
-        return redirect()->route('employe.index')->with('success', 'Employe updated successfully.');
+        $employe = Employe::findOrFail($id);
+        $employe->update($request->all());
+
+        Toastr::success('Data successfully updated!');
+
+        return redirect()->route('employe.index');
     }
 
     public function destroy($id)

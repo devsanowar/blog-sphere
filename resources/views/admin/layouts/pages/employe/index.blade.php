@@ -13,7 +13,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h4 class="text-uppercase">All employes <span><a href="{{ route('employe.create') }}" class="btn btn-primary right">Create Teacher</a></span></h4>
+                        <h4 class="text-uppercase">All employes <span><a href="{{ route('employe.create') }}" class="btn btn-primary right">Create Employe</a></span></h4>
                     </div>
                     <div class="body table-responsive">
                         <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
