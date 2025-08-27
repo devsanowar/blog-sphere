@@ -166,6 +166,12 @@ $maskedEmail = $name . '@' . $parts[1];
                 </a>
             </li>
 
+            <li class="">
+                <a href="{{ route('employe.index') }}"><i class="zmdi zmdi-account"></i>
+                    <span>Employes</span>
+                </a>
+            </li>
+
 
             <li class="{{ request()->routeIs('subscriber.index') ? 'active' : '' }}">
                 <a href="{{ route('subscriber.index') }}"><i class="zmdi zmdi-account"></i>

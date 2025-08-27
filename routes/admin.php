@@ -181,4 +181,14 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::delete('destroy/{id}', [\App\Http\Controllers\Admin\TeacherController::class, 'destroy'])->name('teacher.destroy');
     });
 
+    // EmployeRoutes
+    Route::prefix('employe')->group(function () {
+        Route::get('/', [\App\Http\Controllers\Admin\EmployeController::class, 'index'])->name('employe.index');
+        Route::get('create', [\App\Http\Controllers\Admin\EmployeController::class, 'create'])->name('employe.create');
+        Route::post('store', [\App\Http\Controllers\Admin\EmployeController::class, 'store'])->name('employe.store');   
+        Route::get('edit/{id}', [\App\Http\Controllers\Admin\EmployeController::class, 'edit'])->name('employe.edit');
+        Route::put('update/{id}', [\App\Http\Controllers\Admin\EmployeController::class, 'update'])->name('employe.update');
+        Route::delete('destroy/{id}', [\App\Http\Controllers\Admin\EmployeController::class, 'destroy'])->name('employe.destroy');
+    });
+
 });
